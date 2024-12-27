@@ -1,4 +1,3 @@
-import React from 'react'
 import Button from './Button'
 import { useContext } from 'react'
 import { AuthContext } from '../AuthProvider'
@@ -18,11 +17,15 @@ const Header = () => {
   return (
     <>
         <nav className='navbar container pt-3 pb-3 align-items-start'>
-            <Link className='navbar-brand text-light' to="/">Stock Prediction Portal</Link>
+            <Link className='navbar-brand text-light' url="/">Stock Prediction Portal</Link>
 
             <div>
               {isLoggedIn ? (
+                <>
+                <Button text="Dashboard" class="btn-outline-info" url='/dashboard' />
+                &nbsp;
                 <button className='text-light btn btn-danger' onClick={handleLogOut}>Logout</button>
+                </>
               ) : (
                 <>
                 <Button text="Login" class="btn-outline-info" url='/login' />
